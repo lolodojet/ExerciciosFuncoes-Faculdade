@@ -9,8 +9,13 @@ def mostrar_lista(lista):
 while True:
     item = input('Digite um item para adicionar á lista e depois escreva -> sair <- para finalizar: ')
     if item == "sair":
-        break
+        print('Lista de Compras:')
 
+        x = 0
+        for x, e in enumerate(lista_compras):
+            print(f'{x+1}. {e}')
+        break
+        
     try:
         float(item)
         print("O item nao pode ser um numero. Tente de novo!")
@@ -19,4 +24,3 @@ while True:
     except ValueError:
         adicionar_item(lista_compras, item)
 
-mostrar_lista(lista_compras)
